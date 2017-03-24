@@ -14,6 +14,6 @@ class PainelController extends Controller
      */
     public function indexAction()
     {
-        
+        return $this->render('BarbeariaBundle:Painel:index.html.twig');
     }
 }
