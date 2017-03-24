@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Servico</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ servico.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ servico.nome }}</td>
+            </tr>
+            <tr>
+                <th>Descricao</th>
+                <td>{{ servico.descricao }}</td>
+            </tr>
+            <tr>
+                <th>Valor</th>
+                <td>{{ servico.valor }}</td>
+            </tr>
+            <tr>
+                <th>Duracao</th>
+                <td>{{ servico.duracao }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('servico_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('servico_edit', { 'id': servico.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
